@@ -1,0 +1,15 @@
+close all;clear all;clc;
+load hall.mat;
+N=8;
+block=double(hall_gray(20:100,30:140));
+block_dct=dct2(block-128);
+tp=block_dct';
+r90=rot90(block_dct);
+r180=rot90(r90);
+trans=idct2(tp)+128;
+r_90=idct2(r90)+128;
+r_180=idct2(r180)+128;
+subplot(2,2,2),imshow(uint8(trans)),title('转置','Color','b');
+subplot(2,2,3),imshow(uint8(r_90)),title('旋转90度','Color','b');
+subplot(2,2,4),imshow(uint8(r_180)),title('旋转180度','Color','b');
+subplot(2,2,1),imshow(hall_gray(20:100,30:140)),title('原图','Color','b');
