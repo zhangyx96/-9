@@ -12,4 +12,4 @@ hall_c1=hall_color;
 for n = 1:length(x)
     hall_c1(y(n),x(n),:) = [255 0 0];
 end
-imwrite(hall_c1,'picture1.jpg');
+imwrite(hall_c1,'picture1.jpg')；
